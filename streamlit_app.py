@@ -13,7 +13,7 @@ st.write(
 #name_on_order = st.text_input("Namer on Smoothie:")
 #st.write("The name on your Smoothie will be: ", name_on_order)
 
-cnx = st.snowflake("connection")
+cnx = st.connection("snowflake")
 session = cnx.session()
 my_dataframe = session.table("smoothies.public.orders").filter(col("ORDER_FILLED")==0).collect()
 
